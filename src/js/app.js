@@ -1,7 +1,7 @@
 /*eslint-disable*/
 
 
-
+/*
 // Función para seleccionar tipo de formulario
 function updateForm() {
     const registroTipo = document.getElementById('registroTipo').value;
@@ -18,7 +18,7 @@ function updateForm() {
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="nombreEmpresa">Nombre Empresa</label>
-                        <input type="text" class="form-control" id="nombreEmpresa" name="nombreEmpresa" <?php echo $usuario->nombre; ?> placeholder="Ingresar Nombre">
+                        <input type="text" class="form-control" id="nombreEmpresa" name="nombreEmpresa" placeholder="Ingresar Nombre">
                     </div>
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
@@ -99,3 +99,4 @@ function updateForm() {
 
     formulario.innerHTML = formularioHTML;
 }
+*/

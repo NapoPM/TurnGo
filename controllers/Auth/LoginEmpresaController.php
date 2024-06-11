@@ -1,6 +1,6 @@
 <?php
 
-namespace Controllers;
+namespace Controllers\Auth;
 
 use Classes\Email;
 use Model\UsuarioEmpresa;
@@ -8,7 +8,7 @@ use MVC\Router;
 
 use function PHPSTORM_META\map;
 
-class LoginController{
+class LoginEmpresaController{
 
     public static function login(Router $router){
         $router->render('auth/login',[
@@ -53,6 +53,8 @@ class LoginController{
                     $email = new Email($usuario->nombre, $usuario->email, $usuario->token);
                     $email->enviarConfirmacion();
 
+                    // Alertas
+                    $usuario->existeUsuario();
                     // Crear el Usuario
                     $resultado = $usuario->guardar();
                     if ($resultado) {
@@ -62,12 +64,13 @@ class LoginController{
                }
             }
         }
-
+        $tituloPage = 'Crear Cuenta';
         // debuguear($alertas);
     
         $router->render('auth/crear-cuenta',[
             'usuario' => $usuario,
-            'alertas' => $alertas
+            'alertas' => $alertas,
+            'titulo' => $tituloPage
         ]);
     }
 
@@ -77,17 +80,13 @@ class LoginController{
 
     public static function confirmar(Router $router){
         $alertas = [];
-
         $token = s($_GET['token']);
-
         $usuario = UsuarioEmpresa::where('token', $token);
-
         if (empty($usuario)) {
             UsuarioEmpresa::setAlerta('error', 'Token No Válido');
         }else{
             $usuario->confirmado = "1";
             $usuario->token = "";
-            /*Faltaría agregar $usuario->tipoUsuario = "numero que sea UsuarioEmpresa"*/
             $usuario->guardar();
             UsuarioEmpresa::setAlerta('exito', 'Cuenta Comprobada Correctamente');
         }

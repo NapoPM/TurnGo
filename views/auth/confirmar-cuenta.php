@@ -2,5 +2,5 @@
 <?php include_once __DIR__ . '/../templates/alertas.php'; ?>
 
 <div class="acciones">
-    <a href="/login">¡Inicia Sesión!</a>
+    <a href="/servicios">¡Inicia Sesión!</a>
 </div>

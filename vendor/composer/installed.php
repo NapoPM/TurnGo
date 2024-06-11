@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'usuario/turn-gomvc2.06',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => 'e41404315b50e5aa28c96f55a79ed43da3834b72',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '4a0fac4b9c5ffb595ace16b8009d536da227cdca',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -20,9 +20,9 @@
             'dev_requirement' => false,
         ),
         'usuario/turn-gomvc2.06' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => 'e41404315b50e5aa28c96f55a79ed43da3834b72',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '4a0fac4b9c5ffb595ace16b8009d536da227cdca',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
